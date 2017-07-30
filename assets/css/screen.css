@@ -104,6 +104,31 @@ body {
     }
 }
 
+.home-template .site-nav .nav {
+  margin: 0px;
+}
+
+.home-template .site-nav .nav li a,
+.home-template .site-nav .rss-button
+{
+  opacity: 0.9;
+  color: black;
+  background: rgba(255, 255, 255, 0.9);
+  margin-right: 3px;
+}
+
+.home-template .site-nav .nav li a:hover,
+.home-template .site-nav .rss-button:hover {
+  opacity: 1;
+}
+
+.home-template .site-nav .social-link {
+  display: none;
+}
+
+.home-template .site-nav .rss-button svg {
+  fill: black;
+}
 
 /* 4. Site Header
 /* ---------------------------------------------------------- */
@@ -158,8 +183,14 @@ body {
     text-align: center;
 }
 
+.site-title-wrapper {
+  padding: 20px;
+  border: 2px solid black;
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .site-title {
-    z-index: 10;
+    color: black;
     margin: 0;
     padding: 0;
     font-size: 3.8rem;
@@ -172,12 +203,12 @@ body {
 
 .site-description {
     z-index: 10;
+    color: black;
     margin: 0;
     padding: 5px 0;
     font-size: 2.2rem;
     font-weight: 300;
     letter-spacing: 0.5px;
-    opacity: 0.8;
 }
 
 @media (max-width: 500px) {
@@ -411,8 +442,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-image {
-    width: 100%;
-    height: 200px;
+    width: auto;
+    height: 550px;
     background: var(--lightgrey) no-repeat center center;
     object-fit: cover;
 }
@@ -2286,4 +2317,48 @@ Usage (In Ghost editor):
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
+}
+
+/* 12 Frankenstein Customizations
+/* ---------------------------------------------------------- */
+
+.post-template .post-full-image {
+  background-size: contain;
+}
+
+img.post-book {
+    float:left;
+    width:250px;
+    padding: 0px 20px 5px 0px;
+    margin: 0px
+}
+
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6 {
+  text-align: center;
+}
+
+.post-full-content h1 { font-size: 7rem; }
+.post-full-content h2 { font-size: 6rem; }
+.post-full-content h3 { font-size: 5rem; }
+.post-full-content h4 { font-size: 4rem; }
+.post-full-content h5 { font-size: 3rem; }
+.post-full-content h6 { font-size: 2rem; }
+
+.author-template .site-title,
+.tag-template .site-title {
+  color: white;
+}
+
+.author-template .site-header-content .author-bio {
+    padding: 5px;
+    color: black;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid black;
+    font-size: 110%;
+    font-weight: bold;
 }
