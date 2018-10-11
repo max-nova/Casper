@@ -41,8 +41,13 @@ git remote add upstream git://github.com/TryGhost/Casper.git
 
 git fetch upstream
 git rebase upstream/master
+
 # handle any conflicts
-gulp
+
+# rebuild assets
+yarn install
+yarn dev
+
 git rebase --continue
 git push --force
 ```
