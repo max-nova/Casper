@@ -42,7 +42,7 @@ function css(done) {
         customProperties({preserve: false}),
         colorFunction(),
         autoprefixer({browsers: ['last 2 versions']}),
-        cssnano()
+        cssnano({zindex: false})
     ];
 
     pump([

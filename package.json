@@ -1,8 +1,8 @@
 {
     "name": "frankenstein",
     "description": "A Ghost theme for book review sites",
-    "demo": "https://demo.ghost.io",
-    "version": "0.0.4",
+    "demo": "https://books.max-nova.com",
+    "version": "0.2.0",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
