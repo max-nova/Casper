@@ -21,10 +21,49 @@ Demo [here](https://books.max-nova.com)
 <img src="XXX" class="post-book" />["TITLE"](AMZN_LINK) is a book about...
 ```
 
+### Ratings template
+Should go in the "Code Injection" -> "Post Header" section
+```
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Book",
+    "isbn": "<isbn>",
+    "name": "<title>",
+    "author": {
+      "@type": "Person",
+      "name": "<author>"
+    }
+  },
+  "description": "<200 chars or less>",
+  "datePublished": "<YYYY-MM-DD>",
+  "author": {
+    "@type": "Person",
+    "name": "Max Nova"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "<rating>",
+    "bestRating": "5"
+    "worstRating": "1"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Read100Books"
+  }
+}
+</script>
+```
+
 ### Build a Ghost theme
 ```bash
-cd ~/workspace/
-zip -r /tmp/frankenstein.zip Frankenstein -x *.git/* -x *node_modules/*
+cd ~/workspace/Frankenstein
+# only need to run yarn install once
+yarn install
+
+yarn zip
 # then upload the zip file to your Ghost blog
 ```
 
