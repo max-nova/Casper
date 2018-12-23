@@ -28,20 +28,23 @@ Should go in the "Code Injection" -> "Post Header" section
 {
   "@context": "http://schema.org/",
   "@type": "Review",
+  "url": "<url>",
   "itemReviewed": {
     "@type": "Book",
     "isbn": "<isbn>",
     "name": "<title>",
     "author": {
       "@type": "Person",
-      "name": "<author>"
+      "name": "<author>",
+      "sameAs": "<url>"
     }
   },
   "description": "<200 chars or less>",
   "datePublished": "<YYYY-MM-DD>",
   "author": {
     "@type": "Person",
-    "name": "Max Nova"
+    "name": "Max Nova",
+    "sameAs": "http://max-nova.com"
   },
   "reviewRating": {
     "@type": "Rating",
