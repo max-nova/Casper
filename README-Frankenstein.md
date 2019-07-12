@@ -49,7 +49,7 @@ Should go in the "Code Injection" -> "Post Header" section
   "reviewRating": {
     "@type": "Rating",
     "ratingValue": "<rating>",
-    "bestRating": "5"
+    "bestRating": "5",
     "worstRating": "1"
   },
   "publisher": {
