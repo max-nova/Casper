@@ -15,35 +15,30 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
 
-        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
-            <header class="post-full-header">
-                <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
-                </section>
-                <h1 class="post-full-title">{{title}}</h1>
-            </header>
-
-            {{#if feature_image}}
-            <figure class="post-full-image">
-                {{!-- This is a responsive image, it loads different sizes depending on device
-                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(max-width: 800px) 400px,
-                            (max-width: 1170px) 700px,
-                            1400px"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{title}}"
-                />
+        <div style="display: flex; flex-wrap: wrap; align-items: center; margin-top: 40px; margin-bottom: 10px;">
+            <figure style="min-width:200px;">
+                <img src="{{img_url feature_image size='m'}}" alt="{{title}}" style="height:300px;" />
             </figure>
-            {{/if}}
+
+            <div style="flex-grow: 9; padding: 40px 20px 0px; min-width: 400px;">
+                {{#has tag="5-stars"}}<div class="page-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>{{/has}}
+                {{#has tag="4-stars"}}<div class="page-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>{{/has}}
+                {{#has tag="3-stars"}}<div class="page-rating">&#9733;&#9733;&#9733;&#9734;&#9734;</div>{{/has}}
+                {{#has tag="2-stars"}}<div class="page-rating">&#9733;&#9733;&#9734;&#9734;&#9734;</div>{{/has}}
+                {{#has tag="1-star"}}<div class="page-rating">&#9733;&#9734;&#9734;&#9734;&#9734;</div>{{/has}}
+
+                <h1 class="post-full-title">{{title}}</h1>
+
+                <section>
+                    <div>Read on <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time></div>
+                    {{#foreach tags}}
+                        <a href="{{url}}">{{name}}</a>{{^if @last}},{{/if}}
+                    {{/foreach}}
+                </section>
+            </div>
+        </div>
+
+        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
             <section class="post-full-content">
                 <div class="post-content">
