@@ -29,12 +29,27 @@ into the {body} of the default.hbs template --}}
 
                 <h1 class="post-full-title">{{title}}</h1>
 
-                <section>
+                {{#primary_author}}
+                <section class="author-card">
+                    {{#if profile_image}}
+                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    {{else}}
+                        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+                    {{/if}}
+                    <section class="author-card-content">
+                        <div>Reviewed by</div>
+                        <h4 class="author-card-name" style="margin-top:0px;"><a href="{{url}}">{{name}}</a></h4>
+                    </section>
+                </section>
+                {{/primary_author}}
+
+                <section style="margin-top:5px;">
                     <div>Read on <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time></div>
                     {{#foreach tags}}
                         <a href="{{url}}">{{name}}</a>{{^if @last}},{{/if}}
                     {{/foreach}}
                 </section>
+
             </div>
         </div>
 
@@ -55,21 +70,6 @@ into the {body} of the default.hbs template --}}
             </section>
             {{/if}}
 
-            <footer class="post-full-footer">
-
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{#has author="count:>1"}}
-                    {{> "byline-multiple"}}
-                {{else}}
-                    {{> "byline-single"}}
-                {{/has}}
-
-            </footer>
-
             {{!--
             <section class="post-full-comments">
                 If you want to embed comments, this is a good place to do it!
@@ -84,6 +84,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Links to Previous/Next posts --}}
 <aside class="read-next outer">
     <div class="inner">
+        <h3 style="font-weight:bold; font-size:150%; border-bottom: 3px solid gray;">Read Next</h3>
         <div class="read-next-feed">
             {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}

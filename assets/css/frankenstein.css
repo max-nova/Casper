@@ -1,6 +1,55 @@
 @import "global.css";
 
-.post-feed {
+.site-header-wrapper {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.9);
+}
+
+.site-header .site-title  {
+    color: black;
+}
+
+.site-header .site-description {
+    color: black;
+    font-weight: bold;
+}
+
+.home-template .site-nav ul.nav {
+    margin: 0px;
+}
+
+.site-nav, .site-nav-left {
+    overflow-y: visible;
+}
+
+.home-template .site-nav .nav li a {
+    opacity: 0.95;
+    color: #000;
+    font-weight: bold;
+    background: white;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.home-template .site-nav .nav li:first-child {
+    border-left: 2px solid black;
+}
+
+.home-template .site-nav .site-nav-right {
+    background: white;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.home-template .site-nav .site-nav-right svg {
+    fill: black;
+}
+
+.post-feed, .read-next-feed {
     align-items: flex-end;
 }
 
@@ -24,6 +73,7 @@
     transform: translate(-50%, -50%);
     padding: 8px;
     background-color: rgb(255,255,255,0.7);
+    border-radius: 20px;
     color:black;
     font-size:250%;
 }
@@ -39,19 +89,35 @@
     bottom: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 8px;
+    padding: 8px 20px;
     background-color: rgb(255,255,255,0.85);
     color:black;
+    border: 1px solid black;
+    border-radius: 20px;
     text-align:center;
     line-height: 1.2em;
     font-size:250%;
     font-weight: bolder;
 }
 
+.post-template .post-full-content {
+    padding-top: 20px;
+}
+
+.post-template .read-next-feed {
+    padding-top: 0px;
+}
+
 /* Override from default Casper */
 .post-template .post-content > p:first-child {
     font-size: inherit;
     line-height: inherit;
+}
+
+.post-template .post-full-title {
+    max-width: 700px;
+    margin-bottom: 5px;
+    font-size: 3rem;
 }
 
 img.post-book {
