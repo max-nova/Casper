@@ -6,6 +6,7 @@
     <div class="inner">
         {{> "site-nav"}}
         <div class="site-header-content">
+            <div class="capsule">
             <h1 class="site-title">{{name}}</h1>
             <h2 class="site-description">
                 {{#if description}}
@@ -14,6 +15,7 @@
                     A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
                 {{/if}}
             </h2>
+            </div>
         </div>
     </div>
 </header>

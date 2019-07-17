@@ -1,5 +1,5 @@
 <article class="post-card {{post_class}}
-{{#has tag="#large-post, annual-focus, annual-best, series"}}post-card-large{{/has}}
+{{#has tag="#large-post, annual-focus, annual-best, series"}}prefer-large{{/has}}
 {{#unless feature_image}}no-image{{/unless}}">
 
     {{#if feature_image}}
@@ -21,9 +21,8 @@
         {{#has tag="3-stars"}}<div class="post-card-rating">&#9733;&#9733;&#9733;&#9734;&#9734;</div>{{/has}}
         {{#has tag="2-stars"}}<div class="post-card-rating">&#9733;&#9733;&#9734;&#9734;&#9734;</div>{{/has}}
         {{#has tag="1-star"}}<div class="post-card-rating">&#9733;&#9734;&#9734;&#9734;&#9734;</div>{{/has}}
-
-        {{#has tag="#large-post, annual-focus, annual-best"}}
-            <div class="large-post-title">{{title}}</div>
+        {{^has tag="5-stars,4-stars,3-stars,2-stars,1-star"}}
+            <div class="post-card-title">{{title}}</div>
         {{/has}}
     </a>
     {{/if}}

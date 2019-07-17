@@ -1,6 +1,6 @@
 @import "global.css";
 
-.site-header-wrapper {
+.capsule {
     display: inline-block;
     padding: 10px 20px;
     border: 2px solid black;
@@ -49,6 +49,10 @@
     fill: black;
 }
 
+.post-feed .prefer-large {
+    min-height: 550px;
+}
+
 .post-feed, .read-next-feed {
     align-items: flex-end;
 }
@@ -57,12 +61,9 @@
     min-height: auto;
 }
 
-.post-card-large {
-    min-height: 550px;
-}
-
 .post-card-image {
     height: auto;
+    min-height: 500px;
     max-height: 550px;
 }
 
@@ -84,7 +85,7 @@
     margin-bottom: 20px;
 }
 
-.large-post-title {
+.post-card-title {
     position: absolute;
     bottom: 0%;
     left: 50%;
@@ -95,8 +96,6 @@
     border: 1px solid black;
     border-radius: 20px;
     text-align:center;
-    line-height: 1.2em;
-    font-size:250%;
     font-weight: bolder;
 }
 
@@ -125,4 +124,59 @@ img.post-book {
     width:250px;
     padding: 0px 20px 5px 0px;
     margin: 0px
+}
+
+.author-template .author-meta {
+    color: black;
+}
+
+.author-template .author-meta svg {
+    fill: black;
+}
+
+
+
+@media (min-width: 795px) {
+    .post-feed .prefer-large .post-card-title {
+        line-height: 1.2em;
+        font-size:250%;
+    }
+
+    .post-feed .prefer-large {
+        flex: 1 1 100%;
+        flex-direction: row;
+    }
+
+    .post-feed .prefer-large .post-card-image-link {
+        position: relative;
+        flex: 1 1 auto;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .post-feed .prefer-large .post-card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .post-feed .prefer-large .post-card-content {
+        flex: 0 1 357px;
+    }
+
+    .post-feed .prefer-large h2 {
+        font-size: 2.6rem;
+    }
+
+    .post-feed .prefer-large p {
+        font-size: 1.8rem;
+        line-height: 1.55em;
+    }
+
+    .post-feed .prefer-large .post-card-content-link {
+        padding: 30px 40px 0;
+    }
+
+    .post-feed .prefer-large .post-card-meta {
+        padding: 0 40px 30px;
+    }
 }
