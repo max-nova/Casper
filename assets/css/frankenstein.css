@@ -1,0 +1,192 @@
+@import "global.css";
+
+.capsule {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.9);
+}
+
+.site-home-header .site-title  {
+    color: black;
+}
+
+.site-home-header .site-description {
+    color: black;
+    font-weight: bold;
+}
+
+.home-template .site-nav ul.nav {
+    margin: 0px;
+}
+
+.home-template .site-nav .nav li a {
+    opacity: 0.95;
+    color: #000;
+    font-weight: bold;
+    background: white;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.home-template .site-nav .nav li:first-child {
+    border-left: 2px solid black;
+}
+
+.home-template .site-nav .site-nav-right {
+    display: none;
+}
+
+.post-feed .prefer-large {
+    min-height: 550px;
+}
+
+.post-feed, .read-next-feed {
+    align-items: flex-end;
+}
+
+.post-card {
+    min-height: auto;
+}
+
+.post-card-image {
+    height: auto;
+    min-height: 500px;
+    max-height: 550px;
+}
+
+.post-card-rating {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    background-color: rgb(255,255,255,0.7);
+    border-radius: 20px;
+    color:black;
+    font-size:250%;
+}
+
+.page-rating {
+    color: black;
+    font-size: 250%;
+    margin-bottom: 20px;
+}
+
+.post-card-title {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px 20px;
+    background-color: rgb(255,255,255,0.85);
+    color:black;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align:center;
+    font-weight: bolder;
+}
+
+.post-template .post-full-content {
+    padding-top: 20px;
+}
+
+.post-template .read-next-feed {
+    padding-top: 0px;
+}
+
+/* Override from default Casper */
+.post-template .post-content > p:first-child {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.post-template .post-full-title {
+    max-width: 700px;
+    margin-bottom: 5px;
+    font-size: 3rem;
+}
+
+img.post-book {
+    float:left;
+    width:250px;
+    padding: 0px 20px 5px 0px;
+    margin: 0px
+}
+
+.post-template .author-card {
+    padding: 5px 5px 5px 0px;
+}
+
+.post-template .author-card .author-profile-image {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.post-template .author-card .author-card-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.post-template .author-card .author-card-content .author-card-name a {
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.author-template .author-meta {
+    color: black;
+}
+
+.author-template .author-meta svg {
+    fill: black;
+}
+
+@media (min-width: 795px) {
+    .post-feed .prefer-large .post-card-title {
+        line-height: 1.2em;
+        font-size:250%;
+    }
+
+    .post-feed .prefer-large {
+        flex: 1 1 100%;
+        flex-direction: row;
+    }
+
+    .post-feed .prefer-large .post-card-image-link {
+        position: relative;
+        flex: 1 1 auto;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .post-feed .prefer-large .post-card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .post-feed .prefer-large .post-card-content {
+        flex: 0 1 357px;
+    }
+
+    .post-feed .prefer-large h2 {
+        font-size: 2.6rem;
+    }
+
+    .post-feed .prefer-large p {
+        font-size: 1.8rem;
+        line-height: 1.55em;
+    }
+
+    .post-feed .prefer-large .post-card-content-link {
+        padding: 30px 40px 0;
+    }
+
+    .post-feed .prefer-large .post-card-meta {
+        padding: 0 40px 30px;
+    }
+}
