@@ -76,7 +76,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Links to Previous/Next posts --}}
 <aside class="read-next outer">
     <div class="inner">
-        <h3 style="font-weight:bold; font-size:150%; border-bottom: 3px solid gray;">Read Next</h3>
+        <h3 style="font-weight:bold; font-size:150%; color: white; border-bottom: 3px solid gray;">Read Next</h3>
         <div class="read-next-feed">
             {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
@@ -92,10 +92,6 @@ into the {body} of the default.hbs template --}}
                             {{#foreach related_posts}}
                             <li>
                                 <h4><a href="{{url}}">{{title}}</a></h4>
-                                <div class="read-next-card-meta">
-                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
-                                        {{reading_time}}</p>
-                                </div>
                             </li>
                             {{/foreach}}
                         </ul>
