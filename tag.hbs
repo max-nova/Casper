@@ -6,6 +6,7 @@
     {{> site-header}}
     {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner site-header-content">
+            <div class="capsule">
             <h1 class="site-title">{{name}}</h1>
             <h2 class="site-description">
                 {{#if description}}
@@ -14,6 +15,7 @@
                 A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
                 {{/if}}
             </h2>
+            </div>
         </div>
     </div>
 </header>
